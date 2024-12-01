@@ -10,7 +10,7 @@ const Footer = () => {
     <Wrapper>
       <Inner>
         <Top>
-          <Logo>PocketPal</Logo>
+          <Logo>Turf</Logo>
           <Links>
             <h2>Support</h2>
             <Link href="#">Customer Login</Link>
@@ -20,7 +20,7 @@ const Footer = () => {
             <Link href="#">Waitlist</Link>
           </Links>
           <Links>
-            <h2>Why PocketPal?</h2>
+            <h2>Why Turf?</h2>
             <Link href="#">Our Technology</Link>
             <Link href="#">API</Link>
             <Link href="#">Diversity & Inclusion</Link>
@@ -42,7 +42,7 @@ const Footer = () => {
         <hr />
 
         <div>
-          <p>&copy; 2021 PocketPal. All rights reserved.</p>
+          <p>&copy; 2023 Turf. All rights reserved.</p>
           <SocialIcons>
             <Link href="#">
               <Image src={google_icon} alt="facebook" />

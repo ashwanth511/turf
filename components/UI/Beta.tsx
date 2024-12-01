@@ -1,108 +1,99 @@
-import Image from 'next/image';
+import React from 'react';
 import styled from 'styled-components';
-import beta_ellipse from '../../public/images/beta_ellipse.png';
-import ParallaxText from '../General/ParallaxText';
+import { motion } from 'framer-motion';
+import { container, item } from '@/utils/motionVariants';
+import Link from 'next/link';
 
 const Beta = () => {
   return (
     <Wrapper>
-      <Inner>
-        <ParallaxText baseVelocity={1}>
-          <DIV>
-            <Image src={beta_ellipse} alt="beta_ellipse" />
-            <H2>Beta</H2>
-            <Image src={beta_ellipse} alt="beta_ellipse" />
-          </DIV>
+      <Inner initial="hidden" whileInView="visible" variants={container}>
+        <Content variants={item}>
+          <H1>Ready to Launch Your DEX?</H1>
           <P>
-            all users who test the beta app gets a 2-month discount off premium
-            services
+            Join the future of decentralized trading. Create your custom DEX platform
+            today and start earning from every trade.
           </P>
-          <DIV>
-            <Image src={beta_ellipse} alt="beta_ellipse" />
-            <H2>Beta</H2>
-            <Image src={beta_ellipse} alt="beta_ellipse" />
-          </DIV>
-          <P>
-            all users who test the beta app gets a 2-month discount off premium
-            services
-          </P>
-        </ParallaxText>
+          <ButtonContainer>
+            <Link href="/dashboard">
+              <Button>Start Building Now</Button>
+            </Link>
+            <Link href="/subscription">
+              <SecondaryButton>View Plans</SecondaryButton>
+            </Link>
+          </ButtonContainer>
+        </Content>
       </Inner>
     </Wrapper>
   );
 };
 
-export default Beta;
-
 const Wrapper = styled.div`
   width: 100%;
-  height: 12vh;
-  display: flex;
-  background: #8db1fd;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    height: 15vh;
-  }
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
 `;
 
-const Inner = styled.div`
-  width: 400%;
-  transform: rotate(1deg);
+const Inner = styled(motion.div)`
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  padding: 1%;
-  background: #ffe6a9;
-  border: 3px solid #1e1e1e;
-  margin-right: -10%;
-  margin-left: -10%;
-  position: relative;
-  z-index: 1;
+  text-align: center;
 `;
 
-const DIV = styled.div`
-  display: flex;
-  align-items: center;
-  margin: 0 1em;
-  padding: 0.5em 0;
-
-  & > img {
-    width: 1rem;
-    height: 1rem;
-    margin: 0 0.5em;
-  }
-
-  @media (max-width: 768px) {
-    & > img {
-      width: 0.8rem;
-      height: 0.8rem;
-    }
-  }
+const Content = styled(motion.div)`
+  max-width: 800px;
+  margin: 0 auto;
 `;
 
-const H2 = styled.h2`
+const H1 = styled.h1`
   font-family: var(--font-family-clash-display);
+  font-size: var(--font-size-xxxl);
   font-weight: var(--font-weight-semi-bold);
-  font-size: 2.5rem;
-  color: #1e1e1e;
-  margin: 0 1em;
-
-  @media (max-width: 768px) {
-    font-size: 1.75rem;
-  }
+  margin-bottom: 1.5rem;
+  color: white;
 `;
 
 const P = styled.p`
-  font-family: var(--font-family-clash-display);
-  font-weight: var(--font-weight-normal);
-  font-size: 1.75rem;
-  color: #1e1e1e;
-  margin: 0 1em;
+  font-family: var(--font-family-lufga);
+  font-size: var(--font-size-lg);
+  margin-bottom: 2rem;
+  opacity: 0.9;
+`;
 
-  @media (max-width: 768px) {
-    font-size: 1.25rem;
-    padding: 1em 0;
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+`;
+
+const Button = styled.button`
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background: white;
+  color: var(--color-primary);
+  font-family: var(--font-family-lufga);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 `;
+
+const SecondaryButton = styled(Button)`
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+export default Beta;

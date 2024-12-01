@@ -18,13 +18,12 @@ const Hero = () => {
           viewport={{ once: true, amount: 0.5 }}
         >
           <H1 variants={item}>
-            Take control of your finances with our <span>Budgeting</span> tool
+            Launch ,Grow ,Earn  <span> Together </span> As An Influencer
           </H1>
           <P variants={item}>
-            Set a budget, track your spending, and reach your financial goals
-            with our easy-to-use budgeting app. Get alerts as you approach your
-            budget limits and stsy on track to financial freedom.{' '}
-            <span>Download the app now and take control of your finances</span>
+            Create your custom decentralized exchange in minutes. Set your own trading pairs,
+            earn from every transaction, and build your crypto community. No coding required.{' '}
+            <span>Join the future of decentralized trading today!</span>
           </P>
         </Header>
         <Div>
@@ -32,10 +31,10 @@ const Hero = () => {
         </Div>
         <ImageContainer>
           <Image
-            src="/images/half-phone.png"
+            src="/images/hero_image.png"
             alt="hero image"
-            width={430}
-            height={330}
+            width={520}
+            height={450}
           />
         </ImageContainer>
       </Inner>
@@ -52,6 +51,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 2% 0 0 0;
+  background-color: #f4a460;
   position: relative;
   @media (max-width: 768px) {
     flex-direction: column;

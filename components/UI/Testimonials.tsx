@@ -1,5 +1,8 @@
-import Image from 'next/image';
+import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { item, container } from '@/utils/motionVariants';
 import person_1 from '@/public/images/person_1.png';
 import person_2 from '@/public/images/person_2.png';
 import person_3 from '@/public/images/person_3.png';
@@ -16,12 +19,15 @@ const Testimonials = () => {
         <Image src={yellow_star} alt="yellow_star" />
       </Decor>
       <Inner>
-        <Header>
-          <h1>Testimonials</h1>
-          <p>
-            Tens of thousands of customers are building a brighter future with
-            PocketPal
-          </p>
+        <Header initial="hidden" whileInView="visible" variants={container}>
+          <H1 variants={item}>
+            What people are saying about <br />
+            <span>Turf</span>
+          </H1>
+          <P variants={item}>
+            Tens of thousands of influencers are building their DEX platforms with
+            Turf
+          </P>
         </Header>
         <TestimonialContainer>
           <Testimonial>
@@ -39,12 +45,9 @@ const Testimonials = () => {
                 <Image src={person_3} alt="person_3" />
               </Images>
               <TestimonialText>
-                <p>
-                  “ Thanks to PocketPal, I’ve been able to optimize my financial
-                  journey and achieve my goals faster than I ever thought
-                  possible. The user-friendly interface and exceptional customer
-                  support makes managing my finances a breeze.”
-                </p>
+                <P>
+                  " Thanks to Turf, I've been able to create my own DEX and engage with my community in ways I never thought possible. The platform is intuitive and powerful! "
+                </P>
                 <h3>-Tom S.</h3>
               </TestimonialText>
             </TestmonialCard>
@@ -57,8 +60,6 @@ const Testimonials = () => {
     </Wrapper>
   );
 };
-
-export default Testimonials;
 
 const Wrapper = styled.section`
   background: #fff;
@@ -90,7 +91,7 @@ const Decor = styled.div`
   }
 `;
 
-const Inner = styled.div`
+const Inner = styled(motion.div)`
   margin: 0 auto;
   padding: 2rem;
   display: flex;
@@ -107,7 +108,7 @@ const Inner = styled.div`
   }
 `;
 
-const Header = styled.div`
+const Header = styled(motion.div)`
   text-align: center;
   h1 {
     font-family: var(--font-family-clash-display);
@@ -317,3 +318,21 @@ const TestimonialText = styled.div`
   width: 80%;
   margin: 1rem auto;
 `;
+
+const H1 = styled(motion.h1)`
+  font-family: var(--font-family-clash-display);
+  font-size: var(--font-size-xxxl);
+  font-weight: var(--font-weight-semi-bold);
+  color: var(--color-tertiary);
+  margin-bottom: 1rem;
+`;
+
+const P = styled(motion.p)`
+  font-family: var(--font-family-lufga);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-tertiary);
+  margin-bottom: 2rem;
+`;
+
+export default Testimonials;

@@ -11,43 +11,57 @@ const FAQ = () => {
       <hr />
       <Inner>
         <LHS>
-          <h1>FAQ&apos;s</h1>
+          <h1>Frequently Asked Questions</h1>
           <Image src={faq} alt="FAQ" />
         </LHS>
         <RHS>
-          <Div>
-            <Image src={one} alt="1" />
-            <div>
-              <h2>Is my personal information safe and secure?</h2>
-              <p>
-                Yes, we take the security of your personal information very
-                seriously. Our platform utilizes advanced security measures to
-                protect your data and prevent unauthorized access
-              </p>
-            </div>
-          </Div>
-          <Div>
-            <Image src={two} alt="2" />
-            <div>
-              <h2>Can I access my account from multiple devices?</h2>
-              <p>
-                Yes, you can access your account from any device with an
-                internet connection
-              </p>
-            </div>
-          </Div>
-          <Div>
-            <Image src={three} alt="3" />
-            <div>
-              <h2>What kind of financial guidance do you provide?</h2>
-              <p>
-                Our financial guidance is tailored to your specific needs and
-                goals. Whether you&apos;re looking to save for a major purchase
-                or invest for the future, we’ll provide personalized advice to
-                help you achieve your objectives
-              </p>
-            </div>
-          </Div>
+          <Questions>
+            <Question>
+              <QuestionHeader>
+                <H2>What is Turf?</H2>
+                <Button>+</Button>
+              </QuestionHeader>
+              <Answer>
+                Turf is a platform that enables influencers to create and manage their own decentralized exchanges (DEX). It provides all the tools needed to launch a custom trading platform for your community.
+              </Answer>
+            </Question>
+            <Question>
+              <QuestionHeader>
+                <H2>How do I start creating my DEX?</H2>
+                <Button>+</Button>
+              </QuestionHeader>
+              <Answer>
+                Simply sign up, choose your subscription plan, and use our intuitive dashboard to customize and launch your DEX. No coding knowledge required!
+              </Answer>
+            </Question>
+            <Question>
+              <QuestionHeader>
+                <H2>What features are included?</H2>
+                <Button>+</Button>
+              </QuestionHeader>
+              <Answer>
+                Features include custom branding, trading pair selection, fee configuration, analytics dashboard, liquidity management, and community engagement tools.
+              </Answer>
+            </Question>
+            <Question>
+              <QuestionHeader>
+                <H2>How do I earn from my DEX?</H2>
+                <Button>+</Button>
+              </QuestionHeader>
+              <Answer>
+                You earn through trading fees from every transaction on your DEX. You can set custom fee structures and receive payments directly to your wallet.
+              </Answer>
+            </Question>
+            <Question>
+              <QuestionHeader>
+                <H2>Is technical knowledge required?</H2>
+                <Button>+</Button>
+              </QuestionHeader>
+              <Answer>
+                No! Turf is designed to be user-friendly. Our platform handles all the technical aspects while you focus on growing your community and business.
+              </Answer>
+            </Question>
+          </Questions>
         </RHS>
       </Inner>
     </Wrapper>
@@ -137,49 +151,62 @@ const RHS = styled.div`
   }
 `;
 
-const Div = styled.div`
+const Questions = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 2em;
   width: 100%;
   height: 100%;
+`;
 
-  img {
-    align-self: flex-end;
-    object-fit: contain;
+const Question = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 100%;
+  height: 100%;
+`;
 
-    @media (max-width: 768px) {
-      align-self: center;
-    }
+const QuestionHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
+const H2 = styled.h2`
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-lufga);
+  color: var(--color--tertiary);
+
+  @media (max-width: 768px) {
+    font-size: var(--font-size-md);
   }
+`;
 
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    width: 100%;
-    height: 100%;
+const Button = styled.button`
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-lufga);
+  color: var(--color--tertiary);
 
-    h2 {
-      font-size: var(--font-size-lg);
-      font-weight: var(--font-weight-medium);
-      font-family: var(--font-family-lufga);
-      color: var(--color--tertiary);
+  @media (max-width: 768px) {
+    font-size: var(--font-size-md);
+  }
+`;
 
-      @media (max-width: 768px) {
-        font-size: var(--font-size-md);
-      }
-    }
+const Answer = styled.div`
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-family-lufga);
+  color: var(--color--tertiary);
 
-    p {
-      font-size: var(--font-size-md);
-      font-weight: var(--font-weight-medium);
-      font-family: var(--font-family-lufga);
-      color: var(--color--tertiary);
-
-      @media (max-width: 768px) {
-        font-size: var(--font-size-sm);
-      }
-    }
+  @media (max-width: 768px) {
+    font-size: var(--font-size-sm);
   }
 `;
