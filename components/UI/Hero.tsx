@@ -33,8 +33,8 @@ const Hero = () => {
           <Image
             src="/images/hero_image.png"
             alt="hero image"
-            width={520}
-            height={450}
+            width={600}
+            height={500}
           />
         </ImageContainer>
       </Inner>
@@ -45,12 +45,14 @@ const Hero = () => {
 export default Hero;
 
 const Wrapper = styled.div`
+padding-top: 5rem;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2% 0 0 0;
+  
+  position: relative;
   background-color: #f4a460;
   position: relative;
   @media (max-width: 768px) {

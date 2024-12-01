@@ -91,7 +91,7 @@ const P = styled.p`
   font-family: var(--font-family-lufga);
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-normal);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 `;
 
 const Grid = styled.div`

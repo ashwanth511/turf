@@ -3,9 +3,9 @@ import Preloader from '@/components/General/Preloader';
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { useEffect, useState } from 'react';
+import { WalletProvider } from '../contexts/WalletContext';
 
 export default function App({ Component, pageProps }: AppProps) {
-  // a preloader can be added here
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
@@ -13,12 +13,12 @@ export default function App({ Component, pageProps }: AppProps) {
       setLoading(false);
     }, 4000);
   }, []);
-  return (
-    <>
-      <GlobalStyle />
 
+  return (
+    <WalletProvider>
+      <GlobalStyle />
       <Preloader loading={loading as boolean} />
       <Component {...pageProps} />
-    </>
+    </WalletProvider>
   );
 }

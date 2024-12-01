@@ -70,6 +70,8 @@ const Wrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 100;
+  font-weight: var(--font-weight-semi-bold);
+    font-family: var(--font-family-clash-display);
 `;
 
 const Inner = styled.div`
